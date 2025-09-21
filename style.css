@@ -1,0 +1,241 @@
+:root{
+  --bg: #0f0f10;
+  --panel: #151517;
+  --muted: #a9acb3;
+  --text: #f2f3f5;
+  --accent: #7aa3ff;
+  --accent-2: #9bffcf;
+  --border: #26272b;
+  --radius: 14px;
+  --maxw: 1100px;
+  --gap: 28px;
+}
+
+/* Scroll fluide + marge d’ancrage pour header sticky */
+html { scroll-behavior: smooth; }
+[id] { scroll-margin-top: 80px; }
+
+body{
+  margin:0;
+  font:16px/1.6 system-ui,-apple-system, Segoe UI, Roboto, Ubuntu,"Helvetica Neue",Arial;
+  color:var(--text);
+  background:var(--bg);
+}
+img{max-width:100%; display:block; border-radius:var(--radius);}
+a{color:var(--accent); text-decoration:none}
+a:hover{opacity:.9}
+.container{max-width:var(--maxw); margin-inline:auto; padding-inline:20px}
+.section{padding-block:64px}
+.muted{color:var(--muted)}
+.h1{font-size:clamp(36px,5vw,64px); margin:0 0 18px}
+.h2{font-size:clamp(26px,3.5vw,36px); margin:0 0 14px}
+.h3{font-size:20px; margin:0 0 6px}
+
+/* Header */
+.header{position:sticky; top:0; background:var(--bg); border-bottom:1px solid var(--border);}
+.nav{display:flex; align-items:center; justify-content:space-between; height:64px;}
+.brand{display:flex; align-items:center; gap:10px; font-weight:700}
+.brand-badge{
+  width:100px; height:34px; display:grid; place-items:center; border-radius:10px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2)); color:#0a0a0a; font-weight:800;
+}
+.menu{display:flex; gap:20px; align-items:center}
+.menu a{color:var(--text)}
+.btn{display:inline-flex; align-items:center; padding:10px 16px; border-radius:12px; border:1px solid var(--border); background:var(--panel); color:var(--text); font-weight:600;}
+.btn:hover{opacity:.85}
+.btn--accent{background:linear-gradient(135deg,var(--accent),var(--accent-2)); color:#0a0a0a; border-color:transparent}
+
+/* Hero */
+.hero{display:grid; gap:var(--gap); grid-template-columns:1.1fr 0.9fr; align-items:center;}
+.hero .lead{font-size:18px; color:var(--muted); margin-bottom:18px}
+.hero .cta{display:flex; gap:12px; flex-wrap:wrap}
+.panel{
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:16px;
+}
+.panel img{
+  width:100%;
+  height:auto;
+  max-height:600px;
+  object-fit:cover;
+}
+
+/* About */
+.about{display:grid; gap:var(--gap); grid-template-columns:1fr 1fr}
+.list{display:grid; gap:10px; margin:16px 0 0; padding:0; list-style:none}
+.list li{display:flex; gap:10px; align-items:flex-start}
+.tick{width:18px; height:18px; border-radius:50%; background:var(--accent); margin-top:4px}
+.socials{display:flex; gap:14px; margin-top:16px}
+
+/* Cards génériques */
+.card{
+  background:var(--panel); border:1px solid var(--border);
+  border-radius:var(--radius); padding:14px;
+}
+
+/* ===== Carousel Projets ===== */
+.carousel{ position:relative; margin-top:12px; }
+
+/* Gutter pour éviter que les flèches recouvrent le contenu */
+.car-viewport{
+  overflow:hidden;
+  position:relative;
+  padding:0 36px;
+  margin:0 -36px;
+}
+.car-track{
+  display:flex; gap:16px;
+  transform: translateX(0);
+  transition: transform .55s cubic-bezier(.2,.7,.2,1);
+  will-change: transform;
+}
+
+/* Cartes projet */
+.car-track .project{
+  flex:0 0 100%; max-width:100%;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+/* Pas de zoom sur la carte */
+.car-track .project.is-zoomed{
+  transform: none;
+  box-shadow: none;
+  z-index: 3;
+}
+
+/* Slider interne */
+.proj-slider{
+  position:relative;
+  width:100%;
+  height:240px;
+  overflow:hidden;
+  border-radius:12px;
+}
+.proj-slide{
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  object-fit:cover;
+  border-radius:12px;
+  transform:translateX(0);
+  transition: object-fit .35s ease, transform .45s cubic-bezier(.2,.7,.2,1), opacity .3s ease;
+}
+/* Au survol : voir l’image entière */
+.project:hover .proj-slide,
+.project:focus-within .proj-slide{
+  object-fit:contain;
+}
+
+/* meta */
+.project .meta{display:flex; align-items:center; justify-content:space-between; margin-top:10px}
+.tag{font-size:12px; color:var(--muted)}
+
+/* Description masquée par défaut */
+.proj-desc{
+  overflow:hidden;
+  max-height:0;
+  opacity:0;
+  transition:max-height .35s ease, opacity .35s ease;
+  margin-top:0;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.45;
+}
+.project:hover .proj-desc,
+.project:focus-within .proj-desc{
+  max-height:420px;
+  opacity:1;
+  margin-top:12px;
+}
+
+/* Boutons carrousel */
+.car-btn{
+  position:absolute;
+  top:50%; transform:translateY(-50%);
+  width:42px; height:42px; border-radius:999px;
+  border:1px solid var(--border);
+  background:var(--panel); color:var(--text);
+  font-size:22px; display:grid; place-items:center;
+  cursor:pointer; box-shadow:0 6px 18px rgba(0,0,0,.18);
+  z-index:5;
+}
+.car-btn:hover{opacity:.92}
+.car-btn:disabled{opacity:.4; cursor:default}
+.car-btn.prev{ left:-18px; }
+.car-btn.next{ right:-18px; }
+
+/* ===== Contact simple (sans image) ===== */
+.form-card{
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:20px;
+  margin:16px auto 0;
+  max-width:760px;
+  box-shadow:0 12px 30px rgba(0,0,0,.18);
+}
+
+.field-grid{
+  display:grid; gap:14px;
+  grid-template-columns: 1fr 1fr;
+}
+.field{ display:flex; flex-direction:column; gap:8px; }
+.field label{
+  font-size:13px; color:var(--muted);
+}
+input, textarea{
+  background:var(--panel); color:var(--text);
+  border:1px solid var(--border); padding:12px 14px; border-radius:12px; outline:none;
+}
+input::placeholder, textarea::placeholder{ color:#8a8e97; }
+input:focus, textarea:focus{
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(122,163,255,.18);
+}
+.form-actions{
+  margin-top:12px;
+  display:flex; gap:14px; align-items:center; justify-content:space-between; flex-wrap:wrap;
+}
+.check{ display:flex; align-items:center; gap:8px; font-size:13px; color:var(--muted); }
+.check input{ width:16px; height:16px; }
+
+/* Responsive */
+@media (min-width:980px){
+  .car-track .project{ flex-basis:70%; max-width:70%; }
+}
+@media (min-width:1200px){
+  .car-track .project{ flex-basis:60%; max-width:60%; }
+}
+@media (max-width:980px){
+  .hero,.about{grid-template-columns:1fr}
+  .field-grid{ grid-template-columns:1fr; }
+}
+@media (max-width:640px){
+  .menu{display:none}
+  .car-viewport{ padding:0 28px; margin:0 -28px; }
+  .car-btn{ width:36px; height:36px; font-size:18px; }
+  .car-btn.prev{ left:-14px; }
+  .car-btn.next{ right:-14px; }
+}
+
+.site-footer{
+  border-top:1px solid var(--border);
+  padding:24px 0;
+  margin-top:40px;
+}
+.foot{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:14px; flex-wrap:wrap;
+}
+.foot-links{
+  display:flex; align-items:center; gap:12px; flex-wrap:wrap;
+}
+.backtop{
+  display:inline-flex; align-items:center;
+  padding:8px 12px; border-radius:12px;
+  border:1px solid var(--border); background:var(--panel); color:var(--text);
+}
+@media (max-width:640px){
+  .foot{ flex-direction:column; text-align:center; }
+  .foot-links{ justify-content:center; }
+}

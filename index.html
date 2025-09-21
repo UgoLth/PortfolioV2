@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio – Ugo Lothe | Web & Mobile Dev</title>
+  <meta name="description" content="Portfolio développeur web et mobile – projets, compétences et contact." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip" href="#main">Aller au contenu</a>
+
+  <!-- ===== Header ===== -->
+  <header class="header">
+    <div class="container nav" role="navigation" aria-label="Navigation principale">
+      <div class="brand">
+        <span class="brand-badge" aria-hidden="true">UL</span>
+        <span>Ugo Lothe — Web & Mobile Dev</span>
+      </div>
+      <nav class="menu" aria-label="Liens">
+        <a href="#apropos">À propos</a>
+        <a href="#projets">Projets</a>
+        <a href="#contact">Contact</a>
+        <a class="btn btn--accent" href="https://github.com/UgoLth" target="_blank" rel="noreferrer">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ===== Hero ===== -->
+    <section class="section container">
+      <div class="hero">
+        <div>
+          <h1 class="h1">Développeur Web et Mobile</h1>
+          <p class="lead">Je conçois des expériences digitales modernes, performantes et accessibles.</p>
+          <div class="cta">
+            <a class="btn btn--accent" href="#projets">Voir mes projets</a>
+            <a class="btn" href="#contact">Me contacter</a>
+          </div>
+        </div>
+        <div class="panel">
+          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop" alt="Développeur travaillant sur son ordinateur">
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== À propos ===== -->
+    <section id="apropos" class="section container">
+      <div class="about">
+        <div>
+          <h2 class="h2">À propos de moi</h2>
+          <p class="muted">Étudiant en informatique et passionné par le <strong>développement web et mobile</strong>, je crée des interfaces intuitives et des applications performantes.</p>
+          <p class="muted">Mon <strong>objectif</strong> est de progresser en continu et de collaborer sur des projets concrets, en construisant des solutions fiables et maintenables.</p>
+          <ul class="list">
+            <li><span class="tick" aria-hidden="true"></span> Interfaces <strong>intuitives</strong> & centrées utilisateur</li>
+            <li><span class="tick" aria-hidden="true"></span> Apps <strong>performantes</strong> et fiables</li>
+            <li><span class="tick" aria-hidden="true"></span> Curieux, toujours en veille sur les nouvelles technologies</li>
+            <li><span class="tick" aria-hidden="true"></span> <strong>Capacité</strong> à m’adapter aux besoins (web & mobile)</li>
+          </ul>
+          <div class="socials">
+            <a href="https://github.com/UgoLth" aria-label="GitHub">GitHub</a>
+            <a href="#" aria-label="LinkedIn">LinkedIn</a>
+          </div>
+        </div>
+        <div class="panel">
+          <img src="img/ImageAttentePhoto.jpg" alt="Portrait professionnel">
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Projets (carrousel) ===== -->
+    <section id="projets" class="section container">
+      <h2 class="h2">Projets récents</h2>
+
+      <div class="carousel" aria-label="Projets récents">
+        <button class="car-btn prev" aria-label="Projet précédent">‹</button>
+
+        <div class="car-viewport" tabindex="0">
+          <div class="car-track">
+            <!-- CARTE 1 -->
+            <article class="card project" tabindex="0"
+              data-images="img/MenuInscriptionMiseAuVert.png,
+                           img/MenuAccueilClientMiseAuVert.png,
+                           img/MenuAccueilPensionMiseAuVert.png">
+              <div class="proj-slider">
+                <img class="proj-slide current" src="img/MenuAccueilClientMiseAuVert.png" alt="Dashboard web">
+                <img class="proj-slide next" alt="">
+              </div>
+
+              <!-- Titre + tag visibles par défaut -->
+              <div class="meta">
+                <div class="h3">Projet Mise au vert</div>
+                <span class="tag">WebApp</span>
+              </div>
+
+              <!-- Description — masquée par défaut, visible au survol/focus -->
+              <div class="proj-desc" aria-hidden="true">
+                <p class="muted"><strong>Mise au vert</strong> est une application web de gestion de pensions animales.</p>
+                <p>Elle propose deux espaces :</p>
+                <p><strong>Côté gestionnaire</strong> : tableau de bord pour gérer les pensions, les réservations et le suivi des animaux.</p>
+                <p><strong>Côté client</strong> : espace d’inscription avec tableau de bord pour réserver, gérer ses animaux et suivre leur séjour.</p>
+                <p>Objectif : simplifier la gestion et offrir une expérience claire aux clients.</p>
+              </div>
+            </article>
+
+            <!-- CARTE 2 -->
+            <article class="card project" tabindex="0"
+              data-images="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=1200&auto=format&fit=crop,
+                           https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?q=80&w=1200&auto=format&fit=crop,
+                           https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=1200&auto=format&fit=crop">
+              <div class="proj-slider">
+                <img class="proj-slide current" src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=1200&auto=format&fit=crop" alt="Application mobile">
+                <img class="proj-slide next" alt="">
+              </div>
+              <div class="meta">
+                <div class="h3">Projet B</div>
+                <span class="tag">Mobile</span>
+              </div>
+              <div class="proj-desc" aria-hidden="true">
+                <p class="muted">Application Android Kotlin avec API REST.</p>
+              </div>
+            </article>
+
+            <!-- CARTE 3 -->
+            <article class="card project" tabindex="0"
+              data-images="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop,
+                           https://images.unsplash.com/photo-1517433456452-f9633a875f6f?q=80&w=1200&auto=format&fit=crop,
+                           https://images.unsplash.com/photo-1492724441997-5dc865305da7?q=80&w=1200&auto=format&fit=crop">
+              <div class="proj-slider">
+                <img class="proj-slide current" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" alt="Site vitrine">
+                <img class="proj-slide next" alt="">
+              </div>
+              <div class="meta">
+                <div class="h3">Projet C</div>
+                <span class="tag">Website</span>
+              </div>
+              <div class="proj-desc" aria-hidden="true">
+                <p class="muted">Site performant SEO, design responsive.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <button class="car-btn next" aria-label="Projet suivant">›</button>
+      </div>
+    </section>
+
+    <!-- ===== Contact (simple, sans image) ===== -->
+    <section id="contact" class="section container">
+      <h2 class="h2">Contactez-moi</h2>
+      <p class="muted">Une idée, un projet, un stage ? Écrivez-moi, je vous réponds rapidement.</p>
+
+      <form class="form-card" action="#" method="post" onsubmit="return false" aria-label="Formulaire de contact">
+        <div class="field-grid">
+          <div class="field">
+            <label for="name">Nom</label>
+            <input id="name" name="name" type="text" placeholder="Votre nom" required>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="nom@exemple.com" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="subject">Sujet</label>
+          <input id="subject" name="subject" type="text" placeholder="Sujet du message" required>
+        </div>
+
+        <div class="field">
+          <label for="msg">Message</label>
+          <textarea id="msg" name="message" rows="6" placeholder="Décrivez votre besoin..." required></textarea>
+        </div>
+
+        <div class="form-actions">
+          <label class="check">
+            <input type="checkbox" id="consent" required>
+            <span>J’accepte que ces informations soient utilisées pour me recontacter.</span>
+          </label>
+          <button class="btn btn--accent" type="submit">Envoyer</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container foot">
+      <small class="muted">
+        © <span id="y"></span> Ugo Lothe — Dev web & mobile · Disponible stage
+      </small>
+
+      <nav class="foot-links" aria-label="Liens de bas de page">
+        <a href="cv-ugo-lothe.pdf" class="btn" target="_blank" rel="noreferrer">Télécharger mon CV</a>
+        <a href="mailto:ugo.lothe@example.com">Email</a>
+        <a href="https://github.com/UgoLth" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="#" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="backtop" href="#main" aria-label="Revenir en haut">↑ Haut</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- ===== JS : année + carrousel (slide + centrage au survol) + autoplay survol carte ===== -->
+  <script>
+    // année footer
+    (function(){ const y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear(); })();
+
+    // Carrousel Projets (slide + centrage au survol)
+    (function(){
+      const carousel = document.querySelector('.carousel');
+      if(!carousel) return;
+
+      const viewport = carousel.querySelector('.car-viewport');
+      const track    = carousel.querySelector('.car-track');
+      const cards    = [...track.querySelectorAll('.project')];
+      const prev     = carousel.querySelector('.prev');
+      const next     = carousel.querySelector('.next');
+
+      let index = 0;
+      let stride = 0;
+      let currentX = 0;
+
+      function getGapPx(){
+        const s = getComputedStyle(track);
+        return parseFloat(s.columnGap || s.gap || '16') || 16;
+      }
+      function computeStride(){
+        if (!cards.length) return 0;
+        const gap = getGapPx();
+        const cardW = cards[0].getBoundingClientRect().width;
+        stride = cardW + gap;
+        return stride;
+      }
+      function clampX(x){
+        const max = Math.max(0, track.scrollWidth - viewport.clientWidth);
+        return Math.max(0, Math.min(x, max));
+      }
+      function applyX(x){
+        currentX = clampX(x);
+        track.style.transform = `translateX(${-currentX}px)`;
+      }
+      function setActive(){
+        cards.forEach((c,i)=>c.classList.toggle('is-active', i===index));
+      }
+      function slideTo(i){
+        index = Math.max(0, Math.min(i, cards.length - 1));
+        applyX(index * (stride || computeStride()));
+        updateButtons();
+        setActive();
+      }
+      function updateButtons(){
+        prev.disabled = (index === 0);
+        next.disabled = (index >= cards.length - 1);
+      }
+
+      // Centrer + zoom au survol
+      function centerOn(card){
+        const vr = viewport.getBoundingClientRect();
+        const cr = card.getBoundingClientRect();
+        const delta = (cr.left + cr.width/2) - (vr.left + vr.width/2);
+        applyX(currentX + delta);
+        cards.forEach(c => c.classList.remove('is-zoomed'));
+        card.classList.add('is-zoomed');
+      }
+      function uncenter(){
+        cards.forEach(c => c.classList.remove('is-zoomed'));
+        slideTo(index);
+      }
+
+      cards.forEach((card,i)=>{
+        card.addEventListener('mouseenter', ()=>{ index = i; centerOn(card); });
+        card.addEventListener('mouseleave', uncenter);
+        card.addEventListener('focusin',  ()=>{ index = i; centerOn(card); });
+        card.addEventListener('focusout', uncenter);
+      });
+
+      prev.addEventListener('click', ()=>{ uncenter(); slideTo(index - 1); });
+      next.addEventListener('click', ()=>{ uncenter(); slideTo(index + 1); });
+      window.addEventListener('resize', ()=>{ computeStride(); slideTo(index); });
+
+      computeStride();
+      slideTo(0);
+    })();
+
+    // Autoplay d'images au survol de chaque carte (slide interne)
+    (function(){
+      document.querySelectorAll('.project').forEach(card => {
+        const slider = card.querySelector('.proj-slider');
+        const imgA = slider.querySelector('.proj-slide.current');
+        const imgB = slider.querySelector('.proj-slide.next');
+
+        imgA.style.transform = 'translateX(0)';
+        imgB.style.transform = 'translateX(100%)';
+        imgA.style.transition = 'none';
+        imgB.style.transition = 'none';
+
+        const images = (card.getAttribute('data-images') || '')
+          .split(',').map(s=>s.trim()).filter(Boolean);
+        let i = 0;
+        let timer = null;
+
+        function animateTo(nextIdx){
+          if (images.length <= 1) return;
+          imgB.src = images[nextIdx];
+          imgB.style.transition = 'none';
+          imgB.style.transform = 'translateX(100%)';
+          void imgB.offsetWidth;
+
+          const dur = '.55s cubic-bezier(.2,.7,.2,1)';
+          imgA.style.transition = `transform ${dur}`;
+          imgB.style.transition = `transform ${dur}`;
+          imgA.style.transform = 'translateX(-100%)';
+          imgB.style.transform = 'translateX(0)';
+
+          imgA.addEventListener('transitionend', () => {
+            imgA.style.transition = 'none';
+            imgB.style.transition = 'none';
+            imgA.src = imgB.src;
+            imgA.style.transform = 'translateX(0)';
+            imgB.style.transform = 'translateX(100%)';
+            i = nextIdx;
+          }, { once: true });
+        }
+
+        function start(){
+          if (timer || images.length <= 1) return;
+          timer = setInterval(() => {
+            const nextIdx = (i + 1) % images.length;
+            animateTo(nextIdx);
+          }, 2200);
+          setTimeout(() => {
+            const nextIdx = (i + 1) % images.length;
+            animateTo(nextIdx);
+          }, 350);
+        }
+        function stop(){
+          if (timer) { clearInterval(timer); timer = null; }
+          imgA.style.transition = 'none';
+          imgB.style.transition = 'none';
+          imgA.style.transform = 'translateX(0)';
+          imgB.style.transform = 'translateX(100%)';
+        }
+
+        card.addEventListener('mouseenter', start);
+        card.addEventListener('mouseleave', stop);
+        card.addEventListener('focusin', start);
+        card.addEventListener('focusout', stop);
+      });
+    })();
+  </script>
+</body>
+</html>
